@@ -1,0 +1,53 @@
+\documentclass[10pt,notitlepage]{article}
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsthm} 
+\usepackage{amsmath}
+\usepackage{tikz-cd}
+
+\title{\vspace{-2cm}Some Algebraic Topology Review\vspace{-1cm}}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle	
+	\begin{enumerate}
+		\item For fixed $i,n \geq 1$ construct a space, $X$, with $\widetilde{H}_{i}(X) = \mathbb{Z}/n\mathbb{Z}$ and $\widetilde{H}_{j}(X) = 0$ for $j \neq i$.
+		\item \begin{enumerate}
+			\item  Compute the co/homology groups with $\mathbb{Z}$, $\mathbb{R}$ and $\mathbb{Z}/2\mathbb{Z}$ coefficients of $X = \mathbb{R}^{3} - A$ where $A = B \cup C$, $B$ is the $z$-axis, and $C$ is the unit circle in the $xy$-plane via a Mayer-Vietoris long exact sequence.
+			\item Describe how $X$ is homotopy equivalent to a torus.
+		\end{enumerate}
+	\item Do the functors $h_{n}(X) = H_{n+2}(X) \oplus H_{n-3}(X)$ describe a homology theory? Do the functors $h^{n} = \text{Hom}(H_{n}(X),\mathbb{Z})$ describe a cohomology theory?
+	\item What is the mistake in the following calculation of $H_{1}(S^{1})$?\\
+	We can consider the circle $S^{1}$ to be the union of a closed upper semicircle $X$ and open lower semicircle $Y$. Both of these are contractible, so $\widetilde{H}_{n}(X) = \widetilde{H}_{n}(Y) = 0$. Further $X \cap Y = \emptyset$, so $\widetilde{H}_{n}(X \cap Y) = 0$. Then from the Mayer-Vietoris long exact sequence we have
+	$$ \cdots \rightarrow H_{1}(X \cap Y) \rightarrow H_{1}(X) \oplus H_{1}(Y) \rightarrow H_{1}(S^{1}) \rightarrow H_{0}(X \cap Y) \rightarrow \cdots. $$
+	which yields $0 \rightarrow H_{1}(S^{1}) \rightarrow 0$. Then by exactness $H_{1}(S^{1}) = 0$.
+	\item Remember the fun workshop exercise (1.2.14 in Hatcher) where we calculated the fundamental group of $I^{3}$ with opposite faces identified under a clockwise one-quarter twist? Calculate the co/homology of this quotient space.
+	\item Show that the commutative diagram
+	\begin{center}
+		\begin{tikzcd}[row sep = tiny, ampersand replacement = \&]
+			\cdots \ar[r] \& C_{n+1} \ar[dd] \ar[dr] \& \& B_{n} \ar[r, "\epsilon_{n}"] \ar[dd, swap, "\delta_{n}"] \& C_{n} \ar[dd, "\pi_{n}"] \ar[dr, "\mu_{n}"] \& \& B_{n-1} \ar[dd] \ar[r] \& \cdots \\
+			\& \& A_{n} \ar[ur, "\alpha_{n}"] \ar[dr, swap, "\beta_{n}"] \& \& \& A_{n-1} \ar[ur] \ar[dr] \& \& \\
+			\cdots \ar[r] \& E_{n+1} \ar[ur] \& \& D_{n} \ar[r, swap, "\gamma_{n}"] \& E_{n} \ar[ur, swap, "\eta_{n}"] \& \& D_{n-1} \ar[r] \& \cdots \\
+		\end{tikzcd}
+	\end{center}
+	with the two sequences across the top and bottom exact, gives rise to an exact sequence $$\cdots \rightarrow E_{n+1} \rightarrow B_{n} \rightarrow C_{n} \oplus D_{n} \rightarrow E_{n} \rightarrow B_{n-1} \rightarrow \cdots$$
+	where the maps are obtained from those in the previous diagram in the obvious way, except that $B_{n} \rightarrow C_{n} \oplus D_{n}$ has a minus sign in one coordinate.
+	\item For the mapping torus $T_{f}$ of a map $f:X \rightarrow X$, Example 2.48 in Hatcher constructs a long exact sequence $$\cdots \rightarrow H_{n}(X) \xrightarrow{1-f_{\ast}} H_{n}(X) \xrightarrow{\iota_{n}} H_{n}(T_{f}) \xrightarrow{\delta_{n}} H_{n-1}(X) \rightarrow \cdots.$$ Use this to compute the homology of the mapping tori following maps:
+		\begin{enumerate}
+			\item [(a)] A reflection $S^{2} \rightarrow S^{2}$.
+			
+			\item [(b)] A map $S^{2} \rightarrow S^{2}$ of degree 2.
+			
+			\item [(c)] The map $S^{1} \times S^{1} \rightarrow S^{1} \times S^{1}$ that is the identity on one factor and a reflection on the other. 
+			
+			\item [(d)] The map $S^{1} \times S^{1} \rightarrow S^{1} \times S^{1}$ that is a reflection on each factor.
+			
+			\item [(e)] The map $S^{1} \times S^{1} \rightarrow S^{1} \times S^{1}$ that interchanges the two factors and then reflects one of the factors.
+		\end{enumerate}
+	\item Construct the universal covering spaces of the figure 8, the torus, the Klein bottle, and the
+	projective plane, and the wedge sum of two projective planes. Prove that the first three are
+	contractible.
+	\end{enumerate}
+\end{document}
